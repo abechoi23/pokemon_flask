@@ -6,14 +6,6 @@ from flask_login import current_user, login_user, logout_user, login_required
 import requests
 import random
 
-# @app.route('/')
-# def index():
-#     cdn={
-#         'instructors':('lucas', 'dylan'),
-#         'students':['blane','ashmika','abe','zi','connor','martin','noah','erm']
-#     }
-#     return render_template('index.jinja', cdn=cdn, title='Home')
-
 
 @app.route('/about')
 def about():
@@ -70,6 +62,7 @@ def signout():
 
 
 @app.route('/blog', methods=['GET','POST'])
+@login_required
 def blog():
     form = BlogForm()
     if form.validate_on_submit():
@@ -85,6 +78,7 @@ def blog():
 
 
 @app.route('/user/<username>')  #add in specific user use <> 
+@login_required
 def user(username):
     user_match = User.query.filter_by(username=username).first()
     if not user_match:
