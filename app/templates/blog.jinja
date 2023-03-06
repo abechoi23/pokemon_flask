@@ -1,0 +1,20 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+    <h2>Blog</h2>
+    <form action="" method="post">
+        {{ blog_form.hidden_tag() }}
+        <p>
+        {{ blog_form.title.label }}<br>
+        {{ blog_form.title(size=50) }} 
+        </p>
+        <p>
+        {{ blog_form.body.label }}<br>
+        {{ blog_form.body(cols=52, rows=10) }}
+        </p>
+        <p>
+        {{ blog_form.submit(class='btn btn-primary') }}
+        </p>
+    </form>
+
+{% endblock %}

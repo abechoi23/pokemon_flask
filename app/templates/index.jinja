@@ -1,0 +1,19 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <div class="card" style="width: 18rem;">
+    <img src="{{ pokemon_image }}" class="card-img-top" alt="{{ pokemon_name }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ pokemon_name }}</h5>
+        <p class="card-text">Type: {{ pokemon_type }}<br>Weight: {{ pokemon_weight }}<br>Abilities: {{ pokemon_abilities
+            }}</p>
+    </div>
+    <div class="card-body">
+        <p>{{ form.submit(class='btn btn-primary') }}</p>
+        <a href="#" class="btn btn-secondary">Random Pokemon</a>
+    </div>
+    </div>
+</form>
+{% endblock %}
