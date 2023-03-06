@@ -4,7 +4,6 @@
 <h2>{{ user.username }} Profile</h2>
 
 {% for pokemon in pokemons %}
-{# post.author is backref from User() same as user.username #}
     <p>User: {{ user.username }} <br> Pokemon: {{ pokemon.pokemon_name }} </p>
 {% endfor %}
 
